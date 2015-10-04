@@ -24,15 +24,14 @@ using namespace std ;
 		double sumap = 0.0 ;
 
 		// calcular suma parcial en ”sumap”
-	   	
-		int veces = (muestras/num_hebras) ;  
+	   	  
 		                                      // inicializar suma
-		for( unsigned long i = ih ; i < ih+veces  ; i++ ){                         // para cada i entre 0 y m − 1
-			sumap += f( (i+0.5)/(ih+veces) );                                      // a˜nadir f (xi) a la suma actual
+		for( unsigned long i = ih ; i < muestras  ; i=i+num_hebras ){                         // para cada i entre 0 y m − 1
+			sumap += f( (i+0.5)/muestras );                                      // a˜nadir f (xi) a la suma actual
 			
 		}                                                
-		resultado_parcial[ih] = sumap/(ih+veces) ; // guardar suma parcial en vector.
-		//TENGO DUDAS DE ESTE METODO
+		resultado_parcial[ih] = sumap/(muestras) ; // guardar suma parcial en vector.
+		
 	}
 
 
@@ -69,7 +68,7 @@ using namespace std ;
 
 	// devolver resultado completo
 
-		return solucion/10 ; 
+		return solucion ; 
 
 
 
@@ -91,9 +90,13 @@ using namespace std ;
 
 	/*
 
-	PRIMEROS RESULTADOS DE EJECUCION : 
-		El valor de la integral es 3.1416
-		tiempo transcurrido == 6.648e-06 seg.
+	PRIMEROS RESULTADOS DE EJECUCION :
+ 
+		**********************************************************************
+		El valor de la integral es 3.14159
+		tiempo transcurrido == 0.00679615 seg.
+		**********************************************************************
+
 	*/
 
 }

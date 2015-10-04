@@ -38,9 +38,11 @@ int main(){
 
 	/*
 
-	PRIMEROS RESULTADOS DE EJECUCION : 
-		El valor de la integral es 3.1416
-		tiempo transcurrido == 6.648e-06 seg.
+	**********************************************************************
+	El valor de la integral es 3.14159
+	tiempo transcurrido == 0.00679615 seg.
+	**********************************************************************
+
 	*/
 
 }
