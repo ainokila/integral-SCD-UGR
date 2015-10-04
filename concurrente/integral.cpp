@@ -32,6 +32,7 @@ using namespace std ;
 			
 		}                                                
 		resultado_parcial[ih] = sumap/(ih+veces) ; // guardar suma parcial en vector.
+		//TENGO DUDAS DE ESTE METODO
 	}
 
 
