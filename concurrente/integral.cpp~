@@ -21,13 +21,13 @@ using namespace std ;
 	void * funcion_hebra( void * ih_void ) {
 
 		unsigned long ih = (unsigned long) ih_void ; // Obtengo el indice de esta hebra
-
 		double sumap = 0.0 ;
 
 		// calcular suma parcial en ”sumap”
 	   	  
-		for( unsigned long i = ih ; i < muestras  ; i=i+num_hebras ){                         
-			sumap += f( (i+0.5)/muestras );                                      
+		                                      // inicializar suma
+		for( unsigned long i = ih ; i < muestras  ; i=i+num_hebras ){                         // para cada i entre 0 y m − 1
+			sumap += f( (i+0.5)/muestras );                                      // a˜nadir f (xi) a la suma actual
 			
 		}                                                
 		resultado_parcial[ih] = sumap/(muestras) ; // guardar suma parcial en vector.
@@ -40,7 +40,7 @@ using namespace std ;
 
 		double solucion = 0.0 ; 
 
-	// creo  num_hebras hebras , en este caso seran 4:
+	// creo  n hebras:
 		pthread_t id_hebra[num_hebras] ;
 
 	//Lanzo las hebras , con funcion_hebra pasandole el indice de hebra:
@@ -51,13 +51,13 @@ using namespace std ;
 			pthread_create( &(id_hebra[i]), NULL, funcion_hebra, arg_ptr );
 		}
 
-	// esperar (join) a que termine cada hebra , para que no deje ninguno sin terminar.
+	// esperar (join) a que termine cada hebra
 
 		for( unsigned i = 0 ; i < num_hebras ; i++ ){
 			 pthread_join( id_hebra[i],NULL ); 
 		}
 
-	//Sumo los resultados , que he aniadido al array parcia
+	//Sumo los resultados
 	
 		for( unsigned i = 0 ; i < num_hebras ; i++ ){
 			 solucion += resultado_parcial[i];
