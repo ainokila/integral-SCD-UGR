@@ -5,8 +5,8 @@ using namespace std ;
 
 
 
-	const unsigned long muestras = 100 ; // numero de muestras
-	const unsigned long num_hebras = 10 ; // numero de hebras
+	const unsigned long muestras = 1000000 ; // numero de muestras
+	const unsigned long num_hebras = 4 ; // numero de hebras
 	double resultado_parcial[num_hebras]={0} ; // vector de resultados parciales
 
 

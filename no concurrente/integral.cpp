@@ -6,7 +6,7 @@ using namespace std ;
 
 
 
-	unsigned long m = 100 ; // n´umero de muestras
+	unsigned long m = 1000000 ; // n´umero de muestras
 
 	double f( double x ) { 
 	
