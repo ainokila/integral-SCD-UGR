@@ -1,2 +1,2 @@
-# Autor : Cristian Vélez Ruiz 1ºB
+# Autor : Cristian Vélez Ruiz 2ºB
 Ejercicio Practica 1 Sistemas Concurrentes y Distribuidos. UGR
