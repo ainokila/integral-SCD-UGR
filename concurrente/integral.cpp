@@ -61,7 +61,7 @@ using namespace std ;
 	
 		for( unsigned i = 0 ; i < num_hebras ; i++ ){
 			 solucion += resultado_parcial[i];
-			cout << resultado_parcial[i] << " " ;
+
 		}
 
 
